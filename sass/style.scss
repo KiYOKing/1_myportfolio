@@ -1,0 +1,604 @@
+@use "color";
+@use "breakpoints";
+
+body{
+    font-family: 'Oswald','Noto Sans JP', sans-serif;
+    color: color.$cl-black;
+    
+    &.is-fixed{
+        overflow: hidden;
+    }
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    padding: 6px 10px 6px 30px;
+    width: 160px;
+    margin: 0 auto;
+    &--bg{
+        background-color: color.$white;
+        .button__text{
+            color: color.$bg-dark;
+        }
+    }
+
+    &--border{
+        border: 1px solid color.$white;
+        .button__text{
+            color: color.$white;
+        }
+    }
+
+    &__icon{
+        width: 24px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon-path{
+        fill:color.$white;
+
+        &--contact{
+            fill: color.$bg-dark;
+        }
+    }
+
+    &__text{
+        margin-left: 10px;
+        font-size: 16px;
+        letter-spacing: 0.08em;
+        color: color.$white;
+    }
+}
+
+// header
+.header{
+    background-color: color.$bg-dark;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+    &__container{
+        position: relative;
+    }
+
+    &__log{
+        display: inline-block;
+        // display: flex;
+        padding: 14px 24px;
+        font-size: 20px;
+        color:color.$white;
+    }
+
+    &__menu-button{
+        border: none;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 30px;
+        height: 36px;
+        overflow: hidden;
+        color: transparent;
+        background: url(../img/bg_menu.png) center center no-repeat;
+        background-size: 100% auto;
+
+        &.is-checked{
+            background: url(../img/bg_menu-close.png) center center no-repeat;
+            background-size: 100% auto;
+        }
+    }
+
+    &__contents{
+        display: none;
+        height: calc(100vh - 88px);
+        border-top: 1px solid color.$white;
+        padding-top: 60px;
+    }
+
+    &__nav-item{
+        &+&{
+            margin-top: 24px;
+        }
+    }
+}
+
+.fv{
+    position: relative;
+
+    &__contents{
+        position: absolute;
+        bottom: 26px;
+        left: 0;
+        width: 100%;
+        height: 209px;
+        background: url(../img/sp/bg_fv.png) center center no-repeat;
+        background-size: 100% auto;
+        padding: 32px;
+    }
+
+    &__heading-main{
+        display: block;
+        font-size: 40px;
+        letter-spacing: 0.1em;
+    }
+
+    &__heading-sub{
+        margin-top: 12px;
+        display: block;
+        font-size: 14px;
+    }
+}
+
+.section{
+    padding: 48px 0;
+
+    &__inner{
+        padding: 0 32px;
+    }
+
+    &__head{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 32px;
+        
+        &-main{
+            font-size: 40px;
+            letter-spacing: 0.1em;
+        }
+    
+        &-sub{
+            font-size: 11px;
+        }
+
+        &-center{
+            text-align: center;
+            color: color.$white;
+        }
+    }
+
+    &__lead-text{
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    &__contents{
+        margin-top: 40px;
+    }
+}
+
+// service
+.service{
+    &__list{
+        list-style: none;
+        list-style-type: none;
+    }
+    &__item{
+        &+&{
+            margin-top: 40px;
+        }
+
+        &-img{
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        &-name{
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        &-text{
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    }
+
+}
+
+// works
+.works{
+    background-color: color.$bg-light;
+    &__list{
+
+    }
+    &__item{
+
+        &-img{
+            margin-bottom: 16px;
+            img{
+                box-shadow: 0 4px 15px rgba(color.$black, 0.15);
+            }
+        }
+
+        &-name{
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        &-link{
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        &+&{
+            margin-top: 40px;
+        }
+    }
+}
+
+// About
+.about{
+    &__container{
+        // display: flex;
+        // flex-direction: row-reverse;
+    }
+
+    &__img{
+        margin-bottom: 32px;
+        img{
+            box-shadow: 0 4px 15px rgba(color.$black, 0.15);
+        }
+    }
+
+    &__text-contents{
+
+    }
+
+    &__text{
+        font-size: 16px;
+        line-height: 1.6;
+        
+        &+&{
+            margin-top: 1em;
+        }
+    }
+}
+
+// WorkFlow
+.workflow{
+    background-color: color.$bg-light;
+    &__list{
+        margin-top: 64px;
+    }
+    
+    &__item{
+        position: relative;
+        border:1px solid color.$bg-gray-l;
+        padding: 46px 16px 24px;
+
+        &+&{
+            margin-top: 46px;
+        }
+    }
+    
+    &__item-no{
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px;
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        background-color: color.$bg-dark;
+        color: color.$white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    &__item-img{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__item-name{
+        font-size: 16px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
+    &__item-text{
+        font-size: 14px;
+
+    }
+}
+
+//Message
+.message{
+    
+    &__container{
+        // margin-top: 50px;
+        padding: 48px 0 48px;
+    }
+
+    &__img{
+
+        img{
+            width: 570px;
+        }
+    }
+
+    &__text-contents{
+        margin-top: 46px;
+
+    }
+
+    &__text{
+
+    }
+
+}
+
+// Contact
+.contact{
+    background-color: color.$bg-gray-l;
+    padding: 40px;
+    &__text-contacts{
+
+    }
+    &__link{
+        display: flex;
+        width: 160px;
+        margin: 0 auto;
+        padding: 6px 10px 6px 30px;
+        border: 1px solid color.$white;
+    }
+    &__link-img{
+        width: 24px;
+    }
+
+    &__link-img-path{
+        fill:color.$white;
+    }
+
+    &__link-text{
+        margin: 0 0 0 10px;
+        font-size: 16px;
+        letter-spacing: 0.08em;
+        color:color.$white;
+    }
+}
+
+// Twitter
+.twitter{
+    background-color: color.$bg-dark;
+    padding: 40px;
+    &__text-contents{
+
+    }
+
+    &__link{
+        display: flex;
+        width: 160px;
+        margin: 0 auto;
+        padding: 6px 10px 6px 30px;
+        border: 1px solid color.$white;
+    }
+
+    &__link-img{
+        width: 24px;
+    }
+
+    &__link-img-path{
+        fill:color.$white;
+    }
+    &__link-text{
+        margin: 0 0 0 10px;
+        font-size: 16px;
+        letter-spacing: 0.08em;
+        color:color.$white;
+    }
+}
+// footer
+.footer{
+    padding: 10px;
+    text-align: center;
+    &__text{
+        font-size: 11px;
+        font-family: "Noto Sans JP", sans-serif;
+    }
+}
+
+/******************************
+PC
+******************************/
+@include breakpoints.mq(pc){
+    .wrapper{
+        display: flex;
+    }
+    .main{
+        flex-basis: 79.2%;
+    }
+
+    .header{
+        position: relative;
+        flex-basis: 20.8%;
+        padding: 50px 20px;
+
+        &__container{
+            width: 160px;
+            margin: 0 auto;
+            position: sticky;
+            top: 50px;
+        }
+
+        &__log{
+            font-size: 30px;
+            letter-spacing: 0.12em;
+            line-height: 1;
+        }
+
+        &__menu-button{
+            display: none;
+        }
+
+        &__contents{
+            display: block;
+            border: none;
+        }
+    }
+
+    .button{
+        transition: background 0.3s, color 0.3s, opacity 0.3s;
+
+        &:hover{
+            background-color: color.$white;
+
+            .button__icon-path{
+                fill: color.$bg-dark;
+            }
+            .button__text{
+                color: color.$bg-dark;
+            }
+        }
+
+        &--bg:hover{
+            opacity: 0.7;
+        }
+    }
+
+    .section{
+        &__inner{
+            max-width: calc(880px + 32px * 2);
+            margin: 0 auto;
+        }
+
+        &__head{
+            margin-bottom: 24px;
+        }
+
+        &__head-main{
+            font-size: 60px;
+        }
+    }
+
+    .fv{
+        &__contents{
+            background: url(../img/bg_fv.png) center center no-repeat;
+            background-size: 100% auto;
+            bottom: 100px;
+            left: 0;
+            max-width: 627px;
+            height: 174px;
+            padding-top: 24px;
+            padding-left: 96px;
+
+        }
+    }
+
+    .service{
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 8%;
+        }
+
+        &__item{
+
+            &+&{
+                margin: 0;
+            }
+        }
+    }
+
+    .works{
+
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 8%;
+        }
+        &__item{
+
+            &+&{
+                margin: 0;
+            }
+        }
+    }
+
+    .about{
+
+        &__container{
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 4%;
+        }
+    }
+
+    .workflow{
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 16px;
+        }
+
+        &__item{
+
+            & + &{
+                margin-top: 0;
+            }
+
+        }
+    }
+
+    .message{
+
+        &__container{
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 4%;
+        }
+    }
+
+    .page--bottom{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .contact{
+        padding: 54px 40px;
+    }
+    .twitter{
+        padding: 54px 40px;
+    }
+
+}
+
+/******************************
+Tablet
+******************************/
+@include breakpoints.mq(tab){
+    .section__head-main{
+        font-size: 54px;
+    }
+
+    .fv{
+        &__contents{
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+    }
+
+    .workflow{
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 40px 16px;
+        }
+
+        &__item{
+
+            & + &{
+                margin-top: 0;
+            }
+
+        }
+    }
+}
