@@ -7,8 +7,12 @@ body.is-fixed {
 }
 
 .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 6px 10px 6px 30px;
   width: 160px;
   margin: 0 auto;
@@ -27,8 +31,12 @@ body.is-fixed {
 }
 .button__icon {
   width: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .button__icon-path {
   fill: #fff;
@@ -118,8 +126,13 @@ body.is-fixed {
   padding: 0 32px;
 }
 .section__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 32px;
 }
 .section__head--center {
@@ -168,7 +181,8 @@ body.is-fixed {
   margin-bottom: 12px;
 }
 .works__item-img img {
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 .works__item-name {
   font-size: 16px;
@@ -184,7 +198,8 @@ body.is-fixed {
   margin-bottom: 32px;
 }
 .about__img img {
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 .about__text {
   font-size: 16px;
@@ -212,15 +227,22 @@ body.is-fixed {
   position: absolute;
   top: -24px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   font-size: 24px;
   background-color: #4a4a4a;
   color: #fff;
   width: 48px;
   height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .flow__item-img {
   margin-bottom: 24px;
@@ -241,7 +263,8 @@ body.is-fixed {
   margin-bottom: 32px;
 }
 .message__img img {
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 .message__text {
   font-size: 16px;
@@ -275,20 +298,23 @@ body.is-fixed {
 --------------------------*/
 @media screen and (min-width: 768px) {
   .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   .main {
-    flex-basis: 79.2%;
+    -ms-flex-preferred-size: 79.2%;
+        flex-basis: 79.2%;
   }
   .header {
     position: relative;
-    flex-basis: 20.8%;
+    -ms-flex-preferred-size: 20.8%;
+        flex-basis: 20.8%;
     padding: 50px 20px;
   }
   .header__container {
     width: 160px;
     margin: 0 auto;
-    position: -webkit-sticky;
     position: sticky;
     top: 50px;
   }
@@ -305,6 +331,7 @@ body.is-fixed {
     display: block;
   }
   .button {
+    -webkit-transition: background 0.3s, color 0.3s, opacity 0.3s;
     transition: background 0.3s, color 0.3s, opacity 0.3s;
   }
   .button:hover {
@@ -359,8 +386,13 @@ body.is-fixed {
     margin-top: 0;
   }
   .about__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row-reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     gap: 40px;
   }
   .flow__list {
@@ -372,8 +404,13 @@ body.is-fixed {
     margin-top: 0;
   }
   .message__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row-reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     gap: 40px;
   }
   .page-bottom {
@@ -393,11 +430,11 @@ body.is-fixed {
   }
   .fv__contents {
     bottom: 50%;
-    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
   }
   .flow__list {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px 16px;
   }
 }
-/*# sourceMappingURL=style.css.map */
